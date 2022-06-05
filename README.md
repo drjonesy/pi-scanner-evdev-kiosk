@@ -1,8 +1,8 @@
-## Setting the Raspberry Pi for Quick-Scan
+## Creating a Scanning Solution using Raspberry Pi, EVDEV, and Kiosk Mode
 
-> _Updated: Tues. April 19th, 2022_
+> _Updated: Sunday. July 5th, 2022_
 
-This is a guided process to setup the Raspberry Pi to be an all-in-one **Quick Scan** hardware solution. Be aware that this document will constantly change to improve both the development and production setup. The plan for the production of the unit is to simply make an image file and clone it. Then do an initial system configuration to confirm the system works and the network can be set.
+This is a guided process to setup the Raspberry Pi to be an all-in-one **Scanning Solution**. While this project is built upon a Raspberry Pi, the EVDEV library that is used to capture events is based on Linux Canonical. Meaning this project will work on linux environments. 
 
 # Table of Contents
 
@@ -23,7 +23,7 @@ This is a guided process to setup the Raspberry Pi to be an all-in-one **Quick S
 
 <h1 id="install">Install and Setup</h1>
 
-_We are currently using **Ubuntu Server 20.04** for ARM provided by **Raspberry Pi Imager**._
+_This project is currently using **Ubuntu Server 20.04** for ARM provided by **Raspberry Pi Imager**._
 
 <img src="images/raspberry-pi-logo.png" style="height: 70px; border: solid 1px darkred;" height="70px" />
 <img src="images/ubuntu-logo-white-on-orange.png" style="height: 72px;" height="72px" />
