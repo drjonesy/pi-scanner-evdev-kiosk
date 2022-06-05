@@ -1,0 +1,1 @@
+# pi-scanner-evdev-kiosk
