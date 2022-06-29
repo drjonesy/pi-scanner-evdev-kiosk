@@ -2,24 +2,24 @@
 
 > _Updated: Sunday. July 5th, 2022_
 
-This is a guided process to setup the Raspberry Pi to be an all-in-one **Scanning Solution**. While this project is built upon a Raspberry Pi, the EVDEV library that is used to capture events is based on Linux Canonical. Meaning this project will work on linux environments. 
+This is a guided process to setup the Raspberry Pi to be an all-in-one **Scanning Solution**. While this project is built upon a Raspberry Pi, the EVDEV library that is used to capture events is based on Linux Canonical. Meaning this project will work on linux environments.
 
 # Table of Contents
 
--   <a href="#install">Install and Setup</a>
-    -   <a href="#createUser">Create User</a>
-    -   <a href="#wifi">Configure Wi-Fi</a>
-    -   <a href="#python3">Python3, pip, venv, evdev, python-socketio</a>
-    -   <a href="#scp">Copying Files from Remote to Pi via SCP</a>
-    -   <a href="#gui">The GUI</a>
-    -   <a href="#snaps">Installing Chromium using (Snaps)</a>
-    -   <a href="#autoLogin">Enable Auto Login without Password</a>
-    -   <a href="#disableFeatures">Disable Sleep, Suspend, and Hibernate</a>
-    -   <a href="#loadAppOnStart">Auto-Start an Application on Login</a>
-    -   <a href="#evdev">Python and EVDEV (Scanner App)</a>
-    -   <a href="#socketio">Python and Socket.io</a>
-    -   <a href="#daemon">Daemon Services - Backend Management</a>
-    -   <a href="#hideMouse">Hide Mouse Cursor</a>
+- <a href="#install">Install and Setup</a>
+  - <a href="#createUser">Create User</a>
+  - <a href="#wifi">Configure Wi-Fi</a>
+  - <a href="#python3">Python3, pip, venv, evdev, python-socketio</a>
+  - <a href="#scp">Copying Files from Remote to Pi via SCP</a>
+  - <a href="#gui">The GUI</a>
+  - <a href="#snaps">Installing Chromium using (Snaps)</a>
+  - <a href="#autoLogin">Enable Auto Login without Password</a>
+  - <a href="#disableFeatures">Disable Sleep, Suspend, and Hibernate</a>
+  - <a href="#loadAppOnStart">Auto-Start an Application on Login</a>
+  - <a href="#evdev">Python and EVDEV (Scanner App)</a>
+  - <a href="#socketio">Python and Socket.io</a>
+  - <a href="#daemon">Daemon Services - Backend Management</a>
+  - <a href="#hideMouse">Hide Mouse Cursor</a>
 
 <h1 id="install">Install and Setup</h1>
 
@@ -59,7 +59,7 @@ pass: Password1
 
 ```bash
 
-$ sudo useradd -s /bin/bash -d /home/vivek/ -m -G sudo,input,adm,dialout,dip,plugdev,netdev,lxd scan1
+$ sudo useradd -s /bin/bash -d /home/scan1/ -m -G sudo,input,adm,dialout,dip,plugdev,netdev,lxd scan1
 ```
 
 4. Set the new user `scan1` password to `scan11`. You will be prompted once you type in the following...<br />
@@ -79,7 +79,7 @@ $ scan11
 
 <img src="images/wifi-network-setup.png" style="height: 72px;" height="72px"/>
 
--   If you are not using the Raspberry Pi, then you may want to run the command to find out what your `wlan` (wireless) adapter is called.
+- If you are not using the Raspberry Pi, then you may want to run the command to find out what your `wlan` (wireless) adapter is called.
 
 ```bash
 $ ls /sys/class/net
@@ -108,16 +108,16 @@ $ sudo nano /etc/netplan/50-cloud-init.yaml
 # /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
 # network: {config: disabled}
 network:
-    ethernets:
-        eth0:
-            dhcp4: true
-            optional: true
-    version: 2
+  ethernets:
+    eth0:
+      dhcp4: true
+      optional: true
+  version: 2
 ```
 
 5. Under the `version: 2` line add `wifis` along with SSID and Password. - By default: **wlan0** is Wi-Fi adapter for the Raspberry Pi. Make sure the double quotes in front of the SSID is the 4 spaces from the access-points, same with the `p` in password. It must be 4 spaces!
 
-    _**Note:** Each indent is 4 spaces using the `spacebar` - **DO NOT USE TABS!**_
+   _**Note:** Each indent is 4 spaces using the `spacebar` - **DO NOT USE TABS!**_
 
 ```yaml
 # This file is generated from information provided by the datasource.  Changes
@@ -126,18 +126,18 @@ network:
 # /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
 # network: {config: disabled}
 network:
-    ethernets:
-        eth0:
-            dhcp4: true
-            optional: true
-    version: 2
-    wifis:
-        wlan0:
-            optional: true
-            access-points:
-                "SSID-NAME-HERE":
-                    password: "PASSWORD-HERE"
-            dhcp4: true
+  ethernets:
+    eth0:
+      dhcp4: true
+      optional: true
+  version: 2
+  wifis:
+    wlan0:
+      optional: true
+      access-points:
+        "SSID-NAME-HERE":
+          password: "PASSWORD-HERE"
+      dhcp4: true
 ```
 
 _I don't belive it need to be stated. But to save and close the file press: **Ctrl + x** followed by the **y** key._
@@ -274,8 +274,8 @@ $ sudo apt upgrade
 
 3. It's time to install a base level GUI without any bells and whistles.
 
-    For details on the following setup please view <br />
-    https://www.linuxfordevices.com/tutorials/ubuntu/install-gui-on-ubuntu-server
+   For details on the following setup please view <br />
+   https://www.linuxfordevices.com/tutorials/ubuntu/install-gui-on-ubuntu-server
 
 <img src="images/linux_desktop_env_layer_structure.png" />
 <br /><br />
@@ -620,8 +620,8 @@ Since we are using python to listen to the physicall scanner events. We will als
 
 All scripts must run as background process aka. daemon services
 
--   https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6
--   https://www.journaldev.com/39332/ubuntu-start-stop-restart-services
+- https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6
+- https://www.journaldev.com/39332/ubuntu-start-stop-restart-services
 
 1. Python Script (Sample)
 
