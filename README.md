@@ -168,9 +168,7 @@ _You should see an ip address assigned to **wlan0**_
 <h3 id="python3">Python3, pip, venv, evdev, python-socketio</h3>
 <hr />
 
-<img src="images/python-logo.png" style="height: 70px; border:solid 1px steelblue; " height="70px"/>
-<img src="images/evdev-text.png" style="height: 72px;" height="72px"/>
-<img src="images/socket-io-logo.png" style="height: 70px; border:solid 1px black; " height="70px"/>
+<img src="images/python-logo.png" style="height: 70px; border:solid 1px steelblue; " height="70px"/><img src="images/evdev-text.png" style="height: 72px;" height="72px"/><img src="images/socket-io-logo.png" style="height: 70px; border:solid 1px black; " height="70px"/>
 
 1. Install the follow in order:
 
