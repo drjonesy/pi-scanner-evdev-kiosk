@@ -307,8 +307,7 @@ $ sudo reboot
 <h3 id="snaps">Installing Chromium using (Snaps)</h3>
 <hr />
 
-<img src="images/chromium-logo.png" style="height: 60px; border: solid 1px cadetblue; padding: 10px" height="60px"/>
-<img src="images/snapcraft-logo.png" style="height: 60px; border: solid 1px seagreen; padding: 10px 20px;" height="60px"/>
+<img src="images/chromium-logo.png" style="height: 60px; border: solid 1px cadetblue; padding: 10px" height="60px"/><img src="images/snapcraft-logo.png" style="height: 60px; border: solid 1px seagreen; padding: 10px 20px;" height="60px"/>
 
 To install the browser and any other desktop application we will use the Ubuntu Snaps integration. Learn more about snaps... https://ubuntu.com/tutorials/create-your-first-snap#1-overview
 
