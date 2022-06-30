@@ -237,8 +237,8 @@ print("It works!")
 3. Now using SCP upload the file to your pi in the `/home/scan1/apps/scanner/app/` directory.
 
 ```bash
-# scp <local-file-path> scan1@192.168.193.226:/home/scan1/apps/scanner/app/
-$ scp ./scanner.py scan1@192.168.193.226:/home/scan1/apps/scanner/app
+# scp <local-file-path> scan1@192.168.0.3:/home/scan1/apps/scanner/app/
+$ scp ./scanner.py scan1@192.168.0.3:/home/scan1/apps/scanner/app
 ```
 
 4. Check your pi's directoy and make sure the file was uploaded.
